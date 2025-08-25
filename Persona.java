@@ -1,14 +1,30 @@
-package Cuenta04;
-public class Persona {
+package lp3.s02.proy;
+
+public abstract class Persona implements IReportable {
+    private final String id;
     private String nombre;
-    private Cuenta cuenta; 
+    private String email;
 
-    public Persona(String nombre, double saldoInicial) {
+    protected Persona(String id, String nombre, String email) {
+        this.id = id;
         this.nombre = nombre;
-        this.cuenta = new Cuenta(saldoInicial);
+        this.email = email;
     }
 
-    public String toString() {
-        return "Persona: " + nombre + ", " + cuenta.toString();
+    public String getId() { return id; }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+
+    public abstract String getRol();
+
+    @Override
+    public String resumen() {
+        return String.format("%s[id=%s, nombre=%s, email=%s]",
+                getRol(), id, nombre, email);
     }
+
+    @Override
+    public String toString() { return resumen(); }
 }

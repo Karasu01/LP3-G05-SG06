@@ -1,6 +1,6 @@
-package Banco05;
+package Cuenta04;
 public class Cuenta {
-    protected double saldo;
+    private double saldo;
 
     public Cuenta(double saldoInicial) {
         this.saldo = saldoInicial;
@@ -8,9 +8,8 @@ public class Cuenta {
 
     public void depositar(double monto) { saldo += monto; }
     public void retirar(double monto) { saldo -= monto; }
-    public double getSaldo() { return saldo; }
 
-    public void consultar() {
-
+    public String toString() {
+        return "Saldo: " + saldo;
     }
 }

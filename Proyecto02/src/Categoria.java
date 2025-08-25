@@ -1,0 +1,3 @@
+public enum Categoria {
+    MATEMATICAS, PROGRAMACION, FISICA, ECONOMIA, HUMANIDADES
+}
